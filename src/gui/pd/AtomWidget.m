@@ -27,6 +27,8 @@
 		self.valueLabel.lineBreakMode = NSLineBreakByClipping;
 		self.valueLabel.backgroundColor = [UIColor clearColor];
 		[self addSubview:self.valueLabel];
+        if (@available(iOS 13.0, *))
+            self.valueLabel.textColor = [UIColor blackColor];
 	}
 	return self;
 }
@@ -62,8 +64,6 @@
 - (void)reshape {
 	
 	// value label
-    if (@available(iOS 13.0, *))
-        self.valueLabel.textColor = [UIColor blackColor];
 	self.valueLabel.font = [UIFont fontWithName:self.gui.fontName size:self.gui.fontSize * self.gui.scaleX];
 	CGSize charSize = [@"0" sizeWithFont:self.valueLabel.font]; // assumes monspaced font
 	self.valueLabel.preferredMaxLayoutWidth = charSize.width * self.valueWidth;
