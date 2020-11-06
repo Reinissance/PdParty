@@ -211,7 +211,12 @@
 #pragma mark Touches
 
 // from g_hslider.c & g_vslider.c
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {	
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    NSDictionary* userInfo = @{@"prevent": @(0)};
+    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:@"preventScroll" object:self userInfo:userInfo];
+    
 	UITouch *touch = [touches anyObject];
 	CGPoint pos = [touch locationInView:self];
 	
@@ -320,9 +325,15 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	isOneFinger = YES;
+    NSDictionary* userInfo = @{@"prevent": @(1)};
+    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:@"preventScroll" object:self userInfo:userInfo];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSDictionary* userInfo = @{@"prevent": @(1)};
+    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:@"preventScroll" object:self userInfo:userInfo];
 	isOneFinger = YES;
 }
 
