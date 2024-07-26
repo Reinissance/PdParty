@@ -10,7 +10,7 @@
  */
 #import "PureData.h"
 
-#import "PdAudioController.h"
+#import "PdLinkAudioController.h"
 #import "AppDelegate.h"
 #import "Log.h"
 #import "Osc.h"
@@ -23,8 +23,10 @@
 #import "m_pd.h"
 #import "g_canvas.h"
 
+#import "abl_link.h"
+
 @interface PureData () {
-	PdAudioController *audioController;
+	PdLinkAudioController *audioController;
 	PdFile *playbackPatch;
 	CADisplayLink *updateLink;
 	id routeChangeObserver; ///< opaque route change notification handle
@@ -50,7 +52,11 @@
 		[AVAudioSession.sharedInstance setActive:YES error:nil];
 
 		// configure a typical audio session with the current # of i/o channels
-		audioController = [[PdAudioController alloc] init];
+        AppDelegate *app = (AppDelegate *)UIApplication.sharedApplication.delegate;
+        ABLLinkRef linkRef = [app getLinkRef];
+        PdLinkAudioUnit *au = [[PdLinkAudioUnit alloc] initWithLinkRef:linkRef];
+        audioController = [[PdLinkAudioController alloc] initWithAudioUnit:au];
+        abl_link_tilde_setup();
 		audioController.mixWithOthers = YES;
 		audioController.preferStereo = YES;
 		audioController.allowBluetoothA2DP = YES;

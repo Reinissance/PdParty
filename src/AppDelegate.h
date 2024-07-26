@@ -16,6 +16,8 @@
 #import "SceneManager.h"
 #import "WebServer.h"
 
+#include "ABLLink.h"
+
 /// shake event notification name
 extern NSString *const PdPartyMotionShakeEndedNotification;
 
@@ -88,5 +90,7 @@ extern NSString *const PdPartyMotionShakeEndedNotification;
 - (void)copyLibDirectory;
 - (void)copySamplesDirectory;
 - (void)copyTestsDirectory;
+
+- (ABLLinkRef)getLinkRef;
 
 @end

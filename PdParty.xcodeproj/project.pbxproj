@@ -134,6 +134,9 @@
 		30FA775316E68936000E8D2B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FA775216E68936000E8D2B /* Reachability.m */; };
 		30FA775516E69660000E8D2B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30FA775416E69660000E8D2B /* SystemConfiguration.framework */; };
 		30FAB41A17C50DEE00ED10BC /* RecordingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAB41917C50DEE00ED10BC /* RecordingScene.m */; };
+		4A8D27D72C542BFA00779356 /* LinkKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8D27D62C542BFA00779356 /* LinkKit.xcframework */; };
+		4A8D27DC2C542CFC00779356 /* PdLinkAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D27D82C542CFB00779356 /* PdLinkAudioUnit.m */; };
+		4A8D27DD2C542CFC00779356 /* PdLinkAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D27DA2C542CFC00779356 /* PdLinkAudioController.m */; };
 		7E3FBB3E292C49A900F00CC0 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FBB3D292C49A900F00CC0 /* NavigationController.m */; };
 		7E3FBB41292C559600F00CC0 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FBB40292C559600F00CC0 /* SplitViewController.m */; };
 		7EC666ED2936D29B00F19553 /* PatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC666EC2936D29B00F19553 /* PatchView.m */; };
@@ -402,6 +405,15 @@
 		30FA775416E69660000E8D2B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		30FAB41817C50DEE00ED10BC /* RecordingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingScene.h; sourceTree = "<group>"; };
 		30FAB41917C50DEE00ED10BC /* RecordingScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingScene.m; sourceTree = "<group>"; };
+		4A8D27D12C54265000779356 /* abl_link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = abl_link.h; sourceTree = "<group>"; };
+		4A8D27D22C54265000779356 /* ABLLinkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLLinkUtils.h; sourceTree = "<group>"; };
+		4A8D27D32C54265000779356 /* ABLLinkSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLLinkSettingsViewController.h; sourceTree = "<group>"; };
+		4A8D27D42C54265000779356 /* abl_link.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = abl_link.c; sourceTree = "<group>"; };
+		4A8D27D62C542BFA00779356 /* LinkKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = LinkKit.xcframework; path = libs/link/LinkKit.xcframework; sourceTree = "<group>"; };
+		4A8D27D82C542CFB00779356 /* PdLinkAudioUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdLinkAudioUnit.m; sourceTree = "<group>"; };
+		4A8D27D92C542CFC00779356 /* PdLinkAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdLinkAudioController.h; sourceTree = "<group>"; };
+		4A8D27DA2C542CFC00779356 /* PdLinkAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PdLinkAudioController.m; sourceTree = "<group>"; };
+		4A8D27DB2C542CFC00779356 /* PdLinkAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdLinkAudioUnit.h; sourceTree = "<group>"; };
 		7E3FBB37292C49A900F00CC0 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationController.h; path = src/NavigationController.h; sourceTree = "<group>"; };
 		7E3FBB3D292C49A900F00CC0 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationController.m; path = src/NavigationController.m; sourceTree = "<group>"; };
 		7E3FBB3F292C559600F00CC0 /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplitViewController.h; path = src/SplitViewController.h; sourceTree = "<group>"; };
@@ -419,6 +431,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8D27D72C542BFA00779356 /* LinkKit.xcframework in Frameworks */,
 				30ABE41016B5D54100464926 /* AudioToolbox.framework in Frameworks */,
 				30ABE41A16B5D67800464926 /* AVFoundation.framework in Frameworks */,
 				3078DF9A204D72F60024B673 /* CoreAudioKit.framework in Frameworks */,
@@ -656,6 +669,7 @@
 		30ABE2A616B5A8E500464926 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A8D27D62C542BFA00779356 /* LinkKit.xcframework */,
 				3078DF99204D72F50024B673 /* CoreAudioKit.framework */,
 				30D4CFB020442A4E00662491 /* CoreMedia.framework */,
 				30D4CFAE2043925F00662491 /* AVKit.framework */,
@@ -724,6 +738,7 @@
 		30ABE2D316B5CE3100464926 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				4A8D27D02C54265000779356 /* link */,
 				3057726E1E88A08A007F9A92 /* GCDWebServer */,
 				3081A4711D615FDE006106E8 /* liblo */,
 				3083BD4517F2867400EDF587 /* MBProgressHUD */,
@@ -963,6 +978,22 @@
 			path = libs/net;
 			sourceTree = "<group>";
 		};
+		4A8D27D02C54265000779356 /* link */ = {
+			isa = PBXGroup;
+			children = (
+				4A8D27DB2C542CFC00779356 /* PdLinkAudioUnit.h */,
+				4A8D27D82C542CFB00779356 /* PdLinkAudioUnit.m */,
+				4A8D27D92C542CFC00779356 /* PdLinkAudioController.h */,
+				4A8D27DA2C542CFC00779356 /* PdLinkAudioController.m */,
+				4A8D27D12C54265000779356 /* abl_link.h */,
+				4A8D27D22C54265000779356 /* ABLLinkUtils.h */,
+				4A8D27D32C54265000779356 /* ABLLinkSettingsViewController.h */,
+				4A8D27D42C54265000779356 /* abl_link.c */,
+			);
+			name = link;
+			path = libs/link;
+			sourceTree = "<group>";
+		};
 		7EA5A3CC284A9785009585C9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,7 +1033,6 @@
 				ORGANIZATIONNAME = danomatika;
 				TargetAttributes = {
 					30ABE2A216B5A8E500464926 = {
-						DevelopmentTeam = 3567T5L8KK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1117,6 +1147,7 @@
 				305772981E88A08A007F9A92 /* GCDWebServerResponse.m in Sources */,
 				3005945F2049BA0F00861782 /* Midi.m in Sources */,
 				305772961E88A08A007F9A92 /* GCDWebServerFunctions.m in Sources */,
+				4A8D27DC2C542CFC00779356 /* PdLinkAudioUnit.m in Sources */,
 				303CBBF01C497330000384FF /* Sensors.m in Sources */,
 				302438CD1D5AC072005B15A2 /* WebViewController.m in Sources */,
 				3057729B1E88A08A007F9A92 /* GCDWebServerMultiPartFormRequest.m in Sources */,
@@ -1195,6 +1226,7 @@
 				309EA50120509D4A00337C31 /* unzip.c in Sources */,
 				30DBD04D1C196B0500ABE9E1 /* stripdir.c in Sources */,
 				30F5283717D982AE004736A6 /* Ribbon.m in Sources */,
+				4A8D27DD2C542CFC00779356 /* PdLinkAudioController.m in Sources */,
 				30B01DEB17E374800052F26F /* Log.m in Sources */,
 				30DBD04E1C196B0500ABE9E1 /* midifile.c in Sources */,
 				302E896017E668340004B935 /* MidiViewController.m in Sources */,
@@ -1358,7 +1390,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3567T5L8KK;
+				DEVELOPMENT_TEAM = CGK42Y67HV;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1391,7 +1423,8 @@
 					"-DLIBPD_EXTRA",
 					"-DDEBUG",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PdParty;
+				OTHER_LDFLAGS = "-lc++";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reinissance.PdParty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1412,7 +1445,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3567T5L8KK;
+				DEVELOPMENT_TEAM = CGK42Y67HV;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1444,7 +1477,8 @@
 					"-DUSEAPI_DUMMY",
 					"-DLIBPD_EXTRA",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PdParty;
+				OTHER_LDFLAGS = "-lc++";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reinissance.PdParty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

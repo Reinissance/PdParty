@@ -35,7 +35,15 @@ NSString *const PdPartyMotionShakeEndedNotification = @"PdPartyMotionShakeEndedN
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    
+    ABLLinkRef linkRef_;
+    
+}
+
+- (ABLLinkRef)getLinkRef {
+    return linkRef_;
+}
 
  // call only once
 - (void)setup {
@@ -109,6 +117,9 @@ NSString *const PdPartyMotionShakeEndedNotification = @"PdPartyMotionShakeEndedN
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    linkRef_ = ABLLinkNew(120);
+    
 	// Override point for customization after application launch.
 	
 	// set up split view on iPad
@@ -172,6 +183,7 @@ NSString *const PdPartyMotionShakeEndedNotification = @"PdPartyMotionShakeEndedN
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    ABLLinkDelete(linkRef_);
 }
 
 // references:
