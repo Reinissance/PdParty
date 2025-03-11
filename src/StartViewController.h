@@ -13,6 +13,7 @@
 #import "MidiBridge.h"
 #import "WebServer.h"
 #import "NowPlayingTableViewController.h"
+#import "ABLLinkSettingsViewController.h"
 
 @class WebServer;
 
@@ -34,5 +35,6 @@
 
 - (IBAction)enableWebServer:(id)sender;
 - (IBAction)setWebServerPort:(id)sender;
+- (IBAction)showLinkSettings:(id)sender;
 
 @end

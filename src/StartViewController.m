@@ -107,6 +107,12 @@
 	}
 }
 
+- (IBAction)showLinkSettings:(id)sender {
+    AppDelegate *app = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    ABLLinkSettingsViewController *linkSettingsVC = [ABLLinkSettingsViewController instance:app.getLinkRef];
+    [self.navigationController presentViewController:linkSettingsVC animated:YES completion:nil];
+}
+
 - (IBAction)setWebServerPort:(id)sender {
 	int port = [WebServer checkPortValueFromTextField:self.serverPortTextField];
 	if(port < 0) { // set current port on bad value
